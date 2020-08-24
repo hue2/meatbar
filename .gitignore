@@ -1,0 +1,4 @@
+/site/app/node_modules
+/server/.vs
+/server/Meatbar.Api/bin/Debug
+/server/Meatbar.Api/obj
