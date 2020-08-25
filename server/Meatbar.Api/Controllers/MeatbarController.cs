@@ -1,10 +1,12 @@
 ﻿using Meatbar.Api.Interfaces;
 using Meatbar.Api.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
 namespace Meatbar.Api.Controllers
 {
+    [EnableCors("AllowAll")]
     [ApiController]
     [Route("[controller]")]
     public class MeatbarController : ControllerBase

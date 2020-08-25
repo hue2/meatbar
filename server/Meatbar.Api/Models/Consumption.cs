@@ -7,8 +7,8 @@ namespace Meatbar.Api.Models
 {
     public class Consumption
     {
-        public string PersonId { get; set; }
-        public string BarTypeId { get; set; }
+        public int PersonId { get; set; }
+        public int BarTypeId { get; set; }
         public DateTime Date { get; set; }
     }
 }

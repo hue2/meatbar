@@ -71,8 +71,8 @@ namespace Meatbar.Api.Services
 
                     var consumption = new Consumption()
                     {
-                        PersonId = values[0],
-                        BarTypeId = values[1],
+                        PersonId = Convert.ToInt32(values[0]),
+                        BarTypeId = Convert.ToInt32(values[1]),
                         Date = Convert.ToDateTime(values[2]),
                     };
 
