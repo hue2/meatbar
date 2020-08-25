@@ -5,6 +5,8 @@ namespace Meatbar.Api.Interfaces
 {
     public interface IMeatbarService
     {
-        List<OrderHistory> Get();
+        List<Person> GetPeople();
+        List<BarType> GetBarTypes();
+        List<Consumption> GetConsumptions();
     }
 }

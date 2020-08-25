@@ -1,0 +1,22 @@
+.flex {
+    display: flex;
+}
+
+.container {
+    margin: 15px;
+}
+
+.title {
+    display: flex;
+    align-items: baseline;
+}
+
+.sub-title {
+    margin-left: 5px;
+    font-size: 18px;
+    color: #9b9fa3;
+}
+
+.italic {
+    font-style: italic;
+}

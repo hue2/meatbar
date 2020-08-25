@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Meatbar.Api.Interfaces;
+﻿using Meatbar.Api.Interfaces;
 using Meatbar.Api.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
 
 namespace Meatbar.Api.Controllers
 {
@@ -19,10 +15,22 @@ namespace Meatbar.Api.Controllers
             _service = service;
         }
 
-        [HttpGet]
-        public IEnumerable<OrderHistory> Get()
+        [HttpGet("people")]
+        public IEnumerable<Person> GetPeople()
         {
-            return _service.Get();
+            return _service.GetPeople();
+        }
+
+        [HttpGet("bar-types")]
+        public IEnumerable<BarType> GetBarTypes()
+        {
+            return _service.GetBarTypes();
+        }
+
+        [HttpGet("consumption")]
+        public IEnumerable<Consumption> Get()
+        {
+            return _service.GetConsumptions();
         }
     }
 }
