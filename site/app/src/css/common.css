@@ -11,6 +11,21 @@
     font-style: italic;
 }
 
+.wrapper {
+    border: 2px solid #e2e2e2;
+    border-radius: 5px;
+    box-shadow: 0 0 1px #e2e2e2;
+}
+
+.card-title {
+    font-size: 15px;
+    font-style: bold;
+    font-weight: bold;
+    background: #f5f5f5;
+    padding: 10px;
+    border-bottom: 1px solid #e2e2e2;
+}
+
 /*Title Component*/
 .title {
     display: flex;
@@ -24,16 +39,6 @@
 }
 
 /*Table Component*/
-.table-wrapper {
-    border: 1px solid #f5f5f5;
-    box-shadow: 1px 1px #d9dbda;
-    border-radius: 5px;
-}
-
-#table-title {
-    font-size: 15px;
-    font-style: bold;
-    font-weight: bold;
-    background: #f5f5f5;
-    padding: 10px;
+tr:hover {
+    cursor: pointer;
 }

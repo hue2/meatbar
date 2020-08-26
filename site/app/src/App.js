@@ -10,7 +10,7 @@ export function App() {
     const [people, setPeople] = useState([]);
     const [bartypes, setBarTypes] = useState([]);
     const [consumption, setConsumption] = useState([]);
-    const [selectedPerson, setSelectedPerson] = useState(0);
+    const [selectedPersonId, setselectedPersonId] = useState(0);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -25,7 +25,7 @@ export function App() {
                     setPeople(peopleResponse);
                     setBarTypes(bartypesResponse);
                     setConsumption(consumptionResponse);
-                    setSelectedPerson(peopleResponse[0].id);             
+                    setselectedPersonId(peopleResponse[0].id);             
                 });
             }
             catch(err) {      
@@ -57,21 +57,26 @@ export function App() {
     function getChartData() {
         let result = [];
         bartypes.map(x => {
-            let consumptionForPerson = consumption.filter(e => e.personId === selectedPerson && e.barTypeId === x.id).length;
+            let consumptionForPerson = consumption.filter(e => e.personId === selectedPersonId && e.barTypeId === x.id).length;
             result.push(
                 [
                     x.name,
                     consumptionForPerson
                 ]
-            );        
+            );               
         });      
 
         return result;
     }
 
     function getSelected(personId) {
-        setSelectedPerson(personId);
+        setselectedPersonId(personId);
         getChartData();
+    }
+
+    function getPersonName() {
+        let person = people.find(x => x.id === selectedPersonId);
+        return person ? person.name : "";
     }
 
     return (
@@ -79,18 +84,18 @@ export function App() {
             <Title />         
             <hr/>
             <div className='row'>
-                <div className='col-md-6'>
+                <div className='col-lg-6'>
                     <Table
                         data={getTableContent()}
                         onRowClick={getSelected}
-                        activeId={selectedPerson}
+                        selectedId={selectedPersonId}
                     />
                 </div>
-                <div className='col-md-6'>              
+                <div className='col-lg-6'>              
                     <Chart 
                         column={bartypes}
                         data={getChartData()}
-                        person={selectedPerson}
+                        person={getPersonName()}
                     />
                 </div>
             </div>    

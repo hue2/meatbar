@@ -41,16 +41,16 @@ namespace Meatbar.Api.Services
                     Id = 99,
                     Name = "beef"
                 },
-                 new BarType()
-                {
-                    Id = 98,
-                    Name = "lamb"
-                },
-                  new BarType()
+                   new BarType()
                 {
                     Id = 97,
                     Name = "bison"
                 },
+                 new BarType()
+                {
+                    Id = 98,
+                    Name = "lamb"
+                },          
             };
 
             return data;
