@@ -32,7 +32,7 @@ module.exports = {
             }
         ),
         new webpack.EnvironmentPlugin({
-            api_url: 'https://localhost:44379',
+            api_url: 'http://hueto.xyz:6078',
         })
     ]
 }
