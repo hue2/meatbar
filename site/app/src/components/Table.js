@@ -1,26 +1,34 @@
 import React from 'react';
 
-export function Table (props) {
+export const Table = (props) => {
+    const { data, onRowClick, activeId } = props;
+
     return (
-        <div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Consumptions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {/* {
-                        props.data.map(row => {
-                            <tr>
-                                <td>{row.name}</td>
-                                <td>{row.consumption}</td>
-                            </tr>
-                        })
-                    } */}
-                </tbody>
-            </table>
+        <div className="card table-wrapper">
+            <p id="table-title">Number of consumptions per consumer</p>
+            <div className="table-responsive pad-10">
+                <table className="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Consumptions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            data.length > 0 && data.map(row => (
+                                <tr key={row.id} 
+                                    className={row.id === activeId ? "active" : ""} 
+                                    onClick={() => onRowClick(row.id)}
+                                >
+                                    <td>{row.name}</td>
+                                    <td>{row.total}</td>
+                                </tr>
+                            ))
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }

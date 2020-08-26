@@ -2,3 +2,4 @@
 /server/.vs
 /server/Meatbar.Api/bin/Debug
 /server/Meatbar.Api/obj
+/site/app/.env.local
