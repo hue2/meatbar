@@ -1,14 +1,45 @@
+/*Title Component*/
+.title-container {
+    display: inline-block;
+    align-items: baseline;
+    margin-top: 20px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.sub-title {
+    margin-left: 3px;
+    font-size: 20px;
+    color: #7f7e7d;
+}
+
+/*Table Component*/
+tr:hover {
+    cursor: pointer;
+}
+
+/*Shared css*/
 .flex {
     display: flex;
+}
+
+.italic {
+    font-style: italic;
 }
 
 .pad-10 {
     padding: 10px;
 }
 
+.m-left-10 {
+    margin-left: 10px;
+}
 
-.italic {
-    font-style: italic;
+.m-top-10 {
+    margin-top: 10px;
 }
 
 .wrapper {
@@ -24,21 +55,4 @@
     background: #f5f5f5;
     padding: 10px;
     border-bottom: 1px solid #e2e2e2;
-}
-
-/*Title Component*/
-.title {
-    display: flex;
-    align-items: baseline;
-}
-
-.sub-title {
-    margin-left: 6px;
-    font-size: 18px;
-    color: #9b9fa3;
-}
-
-/*Table Component*/
-tr:hover {
-    cursor: pointer;
 }

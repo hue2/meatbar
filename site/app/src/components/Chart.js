@@ -16,11 +16,16 @@ export const Chart = (props) => {
         );
     
         let options = {
-            legend:  {
+            legend: {
                 position: 'top',
             },
             width: 550,
-            height: 450,          
+            height: 480, 
+            chartArea: {
+                width: '80%',
+                height: '70%',
+                top: 70,
+            }               
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
@@ -28,8 +33,8 @@ export const Chart = (props) => {
     }
 
     return (
-        <div className="card wrapper">
-            <div className="card-title">Meat consumed by {person}</div>
+        <div className='card wrapper'>
+            <div className='card-title'>Meat consumed by {person}</div>
             <div id='chart_div'>
             </div>
         </div>

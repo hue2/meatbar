@@ -11,12 +11,10 @@ export function App() {
     const [bartypes, setBarTypes] = useState([]);
     const [consumption, setConsumption] = useState([]);
     const [selectedPersonId, setselectedPersonId] = useState(0);
-    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         function fetchData() {
             try {
-                setLoading(true);
                 return Promise.all([
                     getPeople(),
                     getBarTypes(),
@@ -29,9 +27,6 @@ export function App() {
                 });
             }
             catch(err) {      
-            }
-            finally {
-                setLoading(false);
             }
         }
 
@@ -76,29 +71,29 @@ export function App() {
 
     function getPersonName() {
         let person = people.find(x => x.id === selectedPersonId);
-        return person ? person.name : "";
+        return person ? person.name : '';
     }
 
     return (
         <div className='container'>
-            <Title />         
-            <hr/>
-            <div className='row'>
-                <div className='col-lg-6'>
-                    <Table
-                        data={getTableContent()}
-                        onRowClick={getSelected}
-                        selectedId={selectedPersonId}
-                    />
-                </div>
-                <div className='col-lg-6'>              
-                    <Chart 
-                        column={bartypes}
-                        data={getChartData()}
-                        person={getPersonName()}
-                    />
-                </div>
-            </div>    
+            <Title />    
+            <hr className='m-top-10'/> 
+                <div className='row'>
+                    <div className='col-lg-6'>
+                        <Table
+                            data={getTableContent()}
+                            onRowClick={getSelected}
+                            selectedId={selectedPersonId}
+                        />
+                    </div>
+                    <div className='col-lg-6'>              
+                        <Chart 
+                            column={bartypes}
+                            data={getChartData()}
+                            person={getPersonName()}
+                        />
+                    </div>
+                </div>          
         </div>
     )
 };
