@@ -4,7 +4,7 @@ export const Chart = (props) => {
     const { data, person } = props;
 
     useEffect(() => {       
-        google.charts.setOnLoadCallback(drawChart);
+        drawChart();       
     }, [data]);
 
     function drawChart() {
@@ -27,7 +27,7 @@ export const Chart = (props) => {
                 top: 70,
             }               
         };
-
+    
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(table, options);
     }

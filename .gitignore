@@ -24,3 +24,8 @@ server/Meatbar.Api/bin/Release/netcoreapp3.1/publish/web.config
 server/Meatbar.Api/Properties/PublishProfiles/FolderProfile.pubxml
 server/Meatbar.Api/Properties/PublishProfiles/FolderProfile.pubxml.user
 server/Meatbar.Api/Meatbar.Api.csproj.user
+server/Meatbar.Api/bin/Release/netcoreapp3.1/Services/consumption.csv
+server/Meatbar.Api/bin/Release/netcoreapp3.1/publish/Services/consumption.csv
+site/app/dist/build.js
+site/app/dist/build.js.map
+site/app/dist/index.html

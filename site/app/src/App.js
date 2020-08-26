@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { getPeople, getBarTypes, getConsumption } from './api/api';
+import { getPeople, getBarTypes, getConsumption } from './api/Api';
 import { Title } from './components/Title';
 import { Table } from './components/Table';
 import { Chart } from './components/Chart';
@@ -31,10 +31,9 @@ export function App() {
         }
 
         fetchData();
-      
     }, []);
 
-    function getTableContent() {
+    function getTableData() {
         let result = [];
         people.map(x => {
             let total = consumption.filter(e => e.personId === x.id).length;
@@ -81,7 +80,7 @@ export function App() {
                 <div className='row'>
                     <div className='col-lg-6'>
                         <Table
-                            data={getTableContent()}
+                            data={getTableData()}
                             onRowClick={getSelected}
                             selectedId={selectedPersonId}
                         />
